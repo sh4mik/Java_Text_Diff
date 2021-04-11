@@ -52,6 +52,19 @@ public class HTMLWriter {
     return "            <tr>\n" + "                " + line1 + line2 + "            </tr>\n";
   }
 
+  private static boolean realEquals(String line1, String line2) {
+    if (line1 == line1)
+      return true;
+    if (line1.length() != line2.length())
+      return false;
+    for (int i = 0; i < line1.length(); i++) {
+      if (line1.charAt(i) != line2.charAt(i)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public static void write(List<String> file1, List<String> file2, List<Pair> sequence,
       String fileName1, String fileName2)
       throws IOException {
@@ -94,10 +107,18 @@ public class HTMLWriter {
         }
       }
       if (i != sequence.size()) {
-        writer.write(toTableLine(
-            toTableColumn(indexFile1, file1.get(indexFile1), Color.NONE),
-            toTableColumn(indexFile2, file2.get(indexFile2), Color.NONE)
-        ));
+        if (realEquals(file1.get(indexFile1), file2.get(indexFile2))) {
+          writer.write(toTableLine(
+              toTableColumn(indexFile1, file1.get(indexFile1), Color.NONE),
+              toTableColumn(indexFile2, file2.get(indexFile2), Color.NONE)
+          ));
+        } else {
+          writer.write(toTableLine(
+              toTableColumn(indexFile1, file1.get(indexFile1), Color.BLUE),
+              toTableColumn(indexFile2, file2.get(indexFile2), Color.BLUE)
+          ));
+        }
+
       }
     }
 

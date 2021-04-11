@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TextDiff</title>
+    </head>
+    <body>
+    	<div align="right"><small><i>JetBrains Interships: Улучшение поддержки Jupyter ноутбуков в PyCharm</i></small></div>
+    </body>    <body>
+        <h2 align="center" style="color:Black">Text Diff</h2>
+    </body>
+    <body>
+        <table border="1" style="table-layout:fixed; border-collapse: collapse;">            <tr>
+                <td><h4>№</h4></td> <td style="width:50%;white-space:pre-wrap;"><h4> D:\Inteships\Java_Text_Diff\io\file1.txt</h4></td> <td><h4>№</h4></td> <td style="width:50%;white-space:pre-wrap;"><h4> D:\Inteships\Java_Text_Diff\io\file2.txt</h4></td>
+            </tr>
+            <tr>
+                <td>0</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">import java.util.ArrayList;</td> <td>0</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">import java.util.ArrayList;</td>             </tr>
+            <tr>
+                <td>1</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">import java.util.List;</td> <td>1</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">import java.util.Collections;</td>             </tr>
+            <tr>
+                <td>2</td> <td style="white-space:pre-wrap; background-color:#FF8E8E;">import utils.Pair;</td> <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>3</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>2</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>4</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">public class Diff {</td> <td>3</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">public class Diff {</td>             </tr>
+            <tr>
+                <td>5</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>4</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>6</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">  public static List<Pair> LCS(List<String> first, List<String> second) {</td> <td>5</td> <td style="white-space:pre-wrap; background-color:#76DDFF;"></td>             </tr>
+            <tr>
+                <td>7</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">    int[][] length = new int[first.size() + 1][second.size() + 1];</td> <td>6</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">    int[][] length ;;</td>             </tr>
+            <tr>
+                <td>8</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">    Pair[][] path = new Pair[first.size() + 1][second.size() + 1]; // because int[2][10] takes less memory than int[10][2]</td> <td>7</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">    Pair[][] path = new Pair[first.sibecause int[2][10] takes less memory than int[10][2]</td>             </tr>
+            <tr>
+                <td>9</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>8</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>10</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    // build length dynamic matrix</td> <td>9</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    // build length dynamic matrix</td>             </tr>
+            <tr>
+                <td>11</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    for (int i = 1; i < first.size() + 1; i++) {</td> <td>10</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    for (int i = 1; i < first.size() + 1; i++) {</td>             </tr>
+            <tr>
+                <td>12</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">      for (int j = 1; j < second.size() + 1; j++) {</td> <td>11</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">      for (int second.size() + 1; j++) {</td>             </tr>
+            <tr>
+                <td>13</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">        if (first.get(i - 1).equals(second.get(j - 1))) {</td> <td>12</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">        if (first.get(i - 1).equ(j - 1))) {</td>             </tr>
+            <tr>
+                <td>14</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">          length[i][j] = length[i - 1][j - 1] + 1;</td> <td>13</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">          length[i][j] = length[i - 1][j - 1] + 1;</td>             </tr>
+            <tr>
+                <td>15</td> <td style="white-space:pre-wrap; background-color:#FF8E8E;">          path[i][j] = new Pair(i - 1, j - 1);</td> <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>16</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>14</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>15</td> <td style="white-space:pre-wrap; background-color:#B4FB95;">        } else {</td>             </tr>
+            <tr>
+                <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>16</td> <td style="white-space:pre-wrap; background-color:#B4FB95;">          if (length[i-1][j] > length[i][j-1]) {</td>             </tr>
+            <tr>
+                <td>17</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">            length[i][j] = length[i-1][j];</td> <td>17</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">            length[i][j] = length[i-1][j];</td>             </tr>
+            <tr>
+                <td>18</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">            path[i][j] = new Pair(i - 1, j);</td> <td>18</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">            path[i][j] = new Pair(i - 1, j);</td>             </tr>
+            <tr>
+                <td>19</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">          } else {</td> <td>19</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">          } else {</td>             </tr>
+            <tr>
+                <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>20</td> <td style="white-space:pre-wrap; background-color:#B4FB95;">            length[i][j] = length[i][j - 1];</td>             </tr>
+            <tr>
+                <td>20</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">            path[i][j] = new Pair(i, j - 1);</td> <td>21</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">            path[i][j] = new Pair(i, j - 1);</td>             </tr>
+            <tr>
+                <td>21</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">          }</td> <td>22</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">          }</td>             </tr>
+            <tr>
+                <td>22</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">        }</td> <td>23</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">        }</td>             </tr>
+            <tr>
+                <td>23</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      }</td> <td>24</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      }</td>             </tr>
+            <tr>
+                <td>24</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    }</td> <td>25</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    }</td>             </tr>
+            <tr>
+                <td>25</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    //pathDebug(path, first.size(), second.size());</td> <td>26</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    //pathDebug(path, first.size(), second.size());</td>             </tr>
+            <tr>
+                <td>26</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>27</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>27</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    // find path (longest sequence)</td> <td>28</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    // find path (longest sequence)</td>             </tr>
+            <tr>
+                <td>28</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    int i = first.size();</td> <td>29</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    int i = first.size();</td>             </tr>
+            <tr>
+                <td>29</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    int j = second.size();</td> <td>30</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    int j = second.size();</td>             </tr>
+            <tr>
+                <td>30</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    List<Pair> result = new ArrayList<>();</td> <td>31</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    List<Pair> result = new ArrayList<>();</td>             </tr>
+            <tr>
+                <td>31</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>32</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>32</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">      int prevJ = path[i][j].getSecond();</td> <td>33</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">      int prevI = path[i][j].getFirst();</td>             </tr>
+            <tr>
+                <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>34</td> <td style="white-space:pre-wrap; background-color:#B4FB95;">      if (prevI == i - 1 && prevJ == j - 1) {</td>             </tr>
+            <tr>
+                <td>33</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">        result.add(new Pair(prevI, prevJ));</td> <td>35</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">        result.add(new Pair(prevI, prevJ));</td>             </tr>
+            <tr>
+                <td>34</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      }</td> <td>36</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      }</td>             </tr>
+            <tr>
+                <td>35</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      i = prevI;</td> <td>37</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      i = prevI;</td>             </tr>
+            <tr>
+                <td>36</td> <td style="white-space:pre-wrap; background-color:#FF8E8E;">      j = prevJ;</td> <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>37</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    }</td> <td>38</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    }</td>             </tr>
+            <tr>
+                <td>38</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>39</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>39</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    Collections.reverse(result);</td> <td>40</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    Collections.reverse(result);</td>             </tr>
+            <tr>
+                <td>40</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    return result;</td> <td>41</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    return result;</td>             </tr>
+            <tr>
+                <td>41</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">  }</td> <td>42</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">  }</td>             </tr>
+            <tr>
+                <td>42</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>43</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>43</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">  private static void pathDebug(int[][][] path, int first, int second) {</td> <td>44</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">  private static void pathDebug(int[][][] path, int first, int second) {</td>             </tr>
+            <tr>
+                <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>45</td> <td style="white-space:pre-wrap; background-color:#B4FB95;">    System.out.print("    ");</td>             </tr>
+            <tr>
+                <td>44</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    for (int i = 0; i < second + 1; ++i) {</td> <td>46</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">    for (int i = 0; i < second + 1; ++i) {</td>             </tr>
+            <tr>
+                <td>45</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">    System.out.println();</td> <td>47</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">    new lines;</td>             </tr>
+            <tr>
+                <td>46</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">    for (int i = 0; i < first + 1; ++i) {</td> <td>48</td> <td style="white-space:pre-wrap; background-color:#76DDFF;">    new lines;</td>             </tr>
+            <tr>
+                <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>49</td> <td style="white-space:pre-wrap; background-color:#B4FB95;">    new lines;</td>             </tr>
+            <tr>
+                <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>50</td> <td style="white-space:pre-wrap; background-color:#B4FB95;"></td>             </tr>
+            <tr>
+                <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td> <td>51</td> <td style="white-space:pre-wrap; background-color:#B4FB95;">      System.out.print("[" + i + "] ");</td>             </tr>
+            <tr>
+                <td>47</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      for (int j = 0; j < second + 1; ++j) {</td> <td>53</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      for (int j = 0; j < second + 1; ++j) {</td>             </tr>
+            <tr>
+                <td>48</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">        System.out.print((path[0][i][j] +":" + path[1][i][j] + " "));</td> <td>54</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">        System.out.print((path[0][i][j] +":" + path[1][i][j] + " "));</td>             </tr>
+            <tr>
+                <td>49</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      }</td> <td>55</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      }</td>             </tr>
+            <tr>
+                <td>50</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      System.out.println();</td> <td>56</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">      System.out.println();</td>             </tr>
+            <tr>
+                <td>51</td> <td style="white-space:pre-wrap; background-color:#FF8E8E;">    }</td> <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>52</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">  }</td> <td>57</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">  }</td>             </tr>
+            <tr>
+                <td>53</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">}</td> <td>58</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">}</td>             </tr>
+            <tr>
+                <td>54</td> <td style="white-space:pre-wrap; background-color:#FF8E8E;">extra</td> <td></td> <td style="white-space:pre-wrap; background-color:#FFFFFF;"></td>             </tr>
+            <tr>
+                <td>55</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">extra</td> <td>59</td> <td style="white-space:pre-wrap; background-color:#FFFFFF;">extra</td>             </tr>
+        </table>
+    </body>
+</html>
